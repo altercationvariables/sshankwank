@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Influencer Signup Test</title>
+<title>Influencer Signup — Perl Cosmetics</title>
 <style>
-  body { font-family: Arial, sans-serif; background: #f7f7fb; display:flex; justify-content:center; align-items:center; height:100vh; }
-  .container { background:#fff; padding:30px; border-radius:12px; width:350px; box-shadow:0 0 10px rgba(0,0,0,0.1); display:flex; flex-direction:column; gap:12px; }
-  input, select { width:100%; padding:12px; border:1px solid #ccc; border-radius:6px; }
+  body { font-family: Arial, sans-serif; background: #f7f7fb; display:flex; justify-content:center; align-items:center; min-height:100vh; margin:0; }
+  .container { background:#fff; padding:30px; border-radius:12px; width:400px; box-shadow:0 0 15px rgba(0,0,0,0.1); display:flex; flex-direction:column; gap:12px; }
+  h2 { margin-top:0; text-align:center; color:#c2185b; }
+  input, select { width:100%; padding:12px; border:1px solid #ccc; border-radius:6px; font-size:14px; }
   button { padding:12px; border:none; border-radius:6px; color:#fff; cursor:pointer; font-size:16px; }
   .autofill-btn { background:#2ecc71; margin-bottom:6px; }
   .submit-btn { background:#3897f0; }
@@ -19,21 +20,19 @@
   <h2>Influencer Signup</h2>
 
   <form action="https://script.google.com/macros/s/AKfycbyuTmFp1GiJKLI5IfP1uxt0fwhZ46Ca7JMl5PBAWkCFJ54aGULJxLvWSdEAZ2qRUihNnA/exec" method="POST">
-    <input type="text" name="name" id="name" placeholder="Full Name" required>
-    <input type="email" name="email" id="email" placeholder="Email" required>
-    <select name="platform" id="platform">
+    
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <select name="platform">
       <option>Instagram</option>
       <option>TikTok</option>
       <option>YouTube</option>
       <option>Blog/Other</option>
     </select>
-    <input type="text" name="social" id="social" placeholder="@ Handle" required>
-    <input type="number" name="followers" id="followers" placeholder="Followers / Subscribers" required>
-    <input type="password" name="password" id="password" placeholder="Password" required>
-    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
-
-    <!-- Redirect to dashboard after submit -->
-    <input type="hidden" name="" value="Dashboard.html">
+    <input type="text" name="social" placeholder="@ Handle" required>
+    <input type="number" name="followers" placeholder="Followers / Subscribers" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
 
     <button type="button" class="autofill-btn" onclick="autofill()">Autofill Sample</button>
     <button type="submit" class="submit-btn">Create Account & View Dashboard</button>
@@ -41,14 +40,14 @@
 </div>
 
 <script>
-function autofill(){
-  document.getElementById('name').value = 'Asha Rivera';
-  document.getElementById('email').value = 'asha@example.com';
-  document.getElementById('platform').value = 'Instagram';
-  document.getElementById('social').value = '@asharivera';
-  document.getElementById('followers').value = 125000;
-  document.getElementById('password').value = 'Password123!';
-  document.getElementById('confirmPassword').value = 'Password123!';
+function autofill() {
+  document.querySelector('[name="name"]').value = 'Asha Rivera';
+  document.querySelector('[name="email"]').value = 'asha@example.com';
+  document.querySelector('[name="platform"]').value = 'Instagram';
+  document.querySelector('[name="social"]').value = '@asharivera';
+  document.querySelector('[name="followers"]').value = 125000;
+  document.querySelector('[name="password"]').value = 'Password123!';
+  document.querySelector('[name="confirmPassword"]').value = 'Password123!';
 }
 </script>
 
