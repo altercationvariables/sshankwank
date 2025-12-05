@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Influencer Signup Test</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f7f7fb; display:flex; justify-content:center; align-items:center; height:100vh; }
+  .container { background:#fff; padding:30px; border-radius:12px; width:350px; box-shadow:0 0 10px rgba(0,0,0,0.1); display:flex; flex-direction:column; gap:12px; }
+  input, select { width:100%; padding:12px; border:1px solid #ccc; border-radius:6px; }
+  button { padding:12px; border:none; border-radius:6px; color:#fff; cursor:pointer; font-size:16px; }
+  .autofill-btn { background:#2ecc71; margin-bottom:6px; }
+  .submit-btn { background:#3897f0; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Influencer Signup</h2>
+
+  <form action="https://script.google.com/macros/s/AKfycbyuTmFp1GiJKLI5IfP1uxt0fwhZ46Ca7JMl5PBAWkCFJ54aGULJxLvWSdEAZ2qRUihNnA/exec" method="POST">
+    <input type="text" name="name" id="name" placeholder="Full Name" required>
+    <input type="email" name="email" id="email" placeholder="Email" required>
+    <select name="platform" id="platform">
+      <option>Instagram</option>
+      <option>TikTok</option>
+      <option>YouTube</option>
+      <option>Blog/Other</option>
+    </select>
+    <input type="text" name="social" id="social" placeholder="@ Handle" required>
+    <input type="number" name="followers" id="followers" placeholder="Followers / Subscribers" required>
+    <input type="password" name="password" id="password" placeholder="Password" required>
+    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
+
+    <!-- Redirect to dashboard after submit -->
+    <input type="hidden" name="_next" value="Dashboard.html">
+
+    <button type="button" class="autofill-btn" onclick="autofill()">Autofill Sample</button>
+    <button type="submit" class="submit-btn">Create Account & View Dashboard</button>
+  </form>
+</div>
+
+<script>
+function autofill(){
+  document.getElementById('name').value = 'Asha Rivera';
+  document.getElementById('email').value = 'asha@example.com';
+  document.getElementById('platform').value = 'Instagram';
+  document.getElementById('social').value = '@asharivera';
+  document.getElementById('followers').value = 125000;
+  document.getElementById('password').value = 'Password123!';
+  document.getElementById('confirmPassword').value = 'Password123!';
+}
+</script>
+
+</body>
+</html>
